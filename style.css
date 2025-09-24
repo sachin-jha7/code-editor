@@ -27,10 +27,10 @@ body {
     width: 60px;
     border-radius: 50%;
     background-image: url("_code_logo.png");
-    /* background-size: 60px 60px; */
-    background-size: contain;
+    background-size: 60px 60px;
+    /* background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
     margin-left: 1vw;
 }
 
