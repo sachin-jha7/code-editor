@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo"></div>
+        <div class="heading">Code Editor - <span style="color: orange;">Build</span> & <span
+                style="color: limegreen;">Run</span></div>
+    </div>
+
+    <div class="main">
+        <div class="input">
+            <div class="code-header">
+                <!-- <p id="code-in">HTML/CSS/JavaScript</p> -->
+                <div class="html-container">
+                    <button class="html-btn btn html">HTML</button>
+                    <button class="css-btn btn css">CSS</button>
+                    <button class="js-btn btn js">JavaScript</button>
+                </div>
+                <button class="run-btn">Run</button>
+            </div>
+            <div id="html_input" class="html_input"></div>
+            <div class="css_input"></div>
+            <div class="js_input"></div>
+        </div>
+        <iframe class="output"></iframe>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.43.3/ace.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
