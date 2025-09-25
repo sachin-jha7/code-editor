@@ -162,11 +162,13 @@ body {
 
     .input {
         height: 600px;
+        width: 655px;
         margin-top: 15px;
     }
 
     .output {
         height: 600px;
+        width: 655px;
     }
 
     .html-btn {
