@@ -23,7 +23,8 @@ var html_editor = ace.edit("html_input");
 html_editor.setTheme("ace/theme/chaos");
 
 html_editor.session.setMode("ace/mode/html");
-var htmlDefaultCode = `<!DOCTYPE html>
+var htmlDefaultCode = `<!--Stylesheets and JavaScript files are already included-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
