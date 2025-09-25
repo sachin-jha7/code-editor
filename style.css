@@ -185,13 +185,13 @@ body {
 @media (min-width: 412.5px) and (max-width: 900px) {
     .input {
         height: 500px;
-        width: 97vw;
+        width: 96vw;
         margin-top: 15px;
     }
 
     .output {
         height: 600px;
-        width: 97vw;
+        width: 96vw;
     }
 }
 
@@ -203,12 +203,14 @@ body {
 
     .input {
         height: 520px;
-        margin-right: 5px;
+        /* margin-right: 5px; */
+        width: 650px;
         margin-top: 15px;
     }
 
     .output {
         height: 520px;
+        width: 650px;
         margin-left: 5px;
         margin-top: 15px;
     }
