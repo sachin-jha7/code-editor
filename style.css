@@ -26,7 +26,7 @@ body {
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-image: url("_code_logo.png");
+    background-image: url("code_logo.png");
     background-size: 60px 60px;
     /* background-size: contain;
     background-repeat: no-repeat;
@@ -147,6 +147,11 @@ body {
 
 
 @media (max-width: 412px) {
+    .logo {
+        height: 50px;
+        width: 50px;
+        background-size: 50px 50px;
+    }
     .heading {
         font-size: 17px;
     }
