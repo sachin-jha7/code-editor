@@ -162,13 +162,13 @@ body {
 
     .input {
         height: 600px;
-        width: 655px;
+        width: 98vw;
         margin-top: 15px;
     }
 
     .output {
         height: 600px;
-        width: 655px;
+        width: 98vw;
     }
 
     .html-btn {
@@ -187,13 +187,13 @@ body {
 @media (min-width: 412.5px) and (max-width: 900px) {
     .input {
         height: 500px;
-        width: 96vw;
+        width: 97vw;
         margin-top: 15px;
     }
 
     .output {
         height: 600px;
-        width: 96vw;
+        width: 97vw;
     }
 }
 
