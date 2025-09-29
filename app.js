@@ -139,7 +139,7 @@ let addCssEditor = () => {
     });
     if (init) {
         css_editor.setValue(liveCode);
-        console.log(liveCode);
+        //console.log(liveCode);
     } else if(isWrite) {
         css_editor.setValue(cssDefaultCode);
     }
@@ -180,7 +180,8 @@ let removeHtml_Css = () => {
 }
 
 var jsDefaultCode = `function changeColor() {
-    document.style.backgroundColor = "lightpink";
+    document.body.style.backgroundColor = "#444";
+    document.querySelector("h1").style.color = "azure";
 }`;
 
 let isWriteJs = true;
