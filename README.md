@@ -15,6 +15,7 @@ No setup required - just open and start coding.
 ----
 
 # Screenshots
+<img width="1366" height="735" alt="Screenshot_code-editor_16:30" src="https://github.com/user-attachments/assets/dde752e5-89c4-4cd7-ac54-8722828073e6" />
 
 
 # Demo
