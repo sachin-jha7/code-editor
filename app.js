@@ -130,11 +130,11 @@ button {
     border-radius: 10px;
     background: transparent;
     display: none;
+    cursor: pointer;
 }
 button:hover {
     background-color: royalblue;
     color: white;
-    cursor: pointer;
 }`;
 
 
