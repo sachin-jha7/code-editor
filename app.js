@@ -33,6 +33,8 @@ var htmlDefaultCode = `<!--Stylesheets and JavaScript files are already included
 </head>
 <body>
     <h1>Hello, World!</h1>
+    <p></p>
+    <button>Show Time</button>
 </body>
 </html>`;
 html_editor.setValue(htmlDefaultCode);
@@ -118,6 +120,21 @@ let removeHtml_Js = () => {
 var cssDefaultCode = `body {
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+button {
+    height: 35px;
+    width: 150px;
+    font-size: 17px;
+    border: 1px solid royalblue;
+    border-radius: 10px;
+    background: transparent;
+    display: none;
+}
+button:hover {
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
 }`;
 
 
@@ -179,9 +196,18 @@ let removeHtml_Css = () => {
     jsBtn.style.textShadow = "0 0 25px red";
 }
 
-var jsDefaultCode = `function changeColor() {
-    document.body.style.backgroundColor = "#444";
-    document.querySelector("h1").style.color = "azure";
+var jsDefaultCode = `let btn = document.querySelector("button");
+btn.style.display = "inline-block";
+
+btn.addEventListener("click",() => {
+    showTime();
+    setInterval(() => {
+        showTime();
+    }, 1000);
+});
+
+let showTime = () => {
+    document.querySelector("p").innerText = new Date().toString();
 }`;
 
 let isWriteJs = true;
