@@ -33,7 +33,8 @@ var htmlDefaultCode = `<!--Stylesheets and JavaScript files are already included
 </head>
 <body>
     <h1>Hello, World!</h1>
-    <p></p>
+    <p class="time"></p>
+    <p class="date"></p>
     <button>Show Time</button>
 </body>
 </html>`;
@@ -126,14 +127,14 @@ button {
     height: 35px;
     width: 150px;
     font-size: 17px;
-    border: 1px solid royalblue;
+    border: 1px solid dodgerblue;
     border-radius: 10px;
     background: transparent;
     display: none;
     cursor: pointer;
 }
 button:hover {
-    background-color: royalblue;
+    background-color: dodgerblue;
     color: white;
 }`;
 
@@ -207,7 +208,8 @@ btn.addEventListener("click",() => {
 });
 
 let showTime = () => {
-    document.querySelector("p").innerText = new Date().toString();
+    document.querySelector(".time").innerText = new Date().toString().split(" ")[4];
+    document.querySelector(".date").innerText = new Date().toString().split(" ").slice(0,4).join("-");
 }`;
 
 let isWriteJs = true;
