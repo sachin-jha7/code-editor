@@ -146,7 +146,7 @@ body {
 }
 
 
-@media (max-width: 412px) {
+@media (max-width: 430px) {
     .logo {
         height: 50px;
         width: 50px;
@@ -184,7 +184,7 @@ body {
     }
 }
 
-@media (min-width: 412.5px) and (max-width: 900px) {
+@media (min-width: 430.5px) and (max-width: 965px) {
     .input {
         height: 500px;
         width: 97vw;
@@ -192,27 +192,26 @@ body {
     }
 
     .output {
-        height: 600px;
+        height: 500px;
         width: 97vw;
     }
 }
 
-@media (min-width: 900.5px) and (max-width: 1292px) {
+@media (min-width: 965.5px) and (max-width: 2000px) {
     .main {
         flex-wrap: nowrap;
-
     }
 
     .input {
         height: 520px;
         /* margin-right: 5px; */
-        width: 650px;
+        width: 49vw;
         margin-top: 15px;
     }
 
     .output {
         height: 520px;
-        width: 650px;
+        width: 49vw;
         margin-left: 5px;
         margin-top: 15px;
     }
