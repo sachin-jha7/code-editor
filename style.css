@@ -116,6 +116,18 @@ body {
     font-size: 14px;
 }
 
+.info {
+    height: 27px;
+    width: 140px;
+    background: transparent;
+    color: blanchedalmond;
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    display: none;
+}
+
 .run-btn {
     height: 27px;
     width: 50px;
@@ -202,15 +214,19 @@ body {
         flex-wrap: nowrap;
     }
 
+    .info {
+        display: inline-block;
+    }
+    
     .input {
-        height: 520px;
-        /* margin-right: 5px; */
+        /* height: 520px; */
+        height: 95.6%;
         width: 49vw;
         margin-top: 15px;
     }
 
     .output {
-        height: 520px;
+        height: 95.6%;
         width: 49vw;
         margin-left: 5px;
         margin-top: 15px;
