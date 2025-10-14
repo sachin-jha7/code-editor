@@ -46,8 +46,7 @@ htmlBtn.style.textShadow = "0 0 25px red";
 
 let isCssClick = false; let isJsClick = false;
 
-RUN.addEventListener("click", () => {
-
+let runCode = () => {
     let red = Math.floor(Math.random() * 255);
     let green = Math.floor(Math.random() * 255);
     let blue = Math.floor(Math.random() * 255);
@@ -56,8 +55,8 @@ RUN.addEventListener("click", () => {
     let htmlCode;
 
 
-    if(isJsClick) {
-         htmlCode = `<!DOCTYPE html>
+    if (isJsClick) {
+        htmlCode = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -72,7 +71,7 @@ RUN.addEventListener("click", () => {
 </html>`;
     }
 
-    
+
     else if (isCssClick) {
         htmlCode = `<!DOCTYPE html>
 <html lang="en">
@@ -102,6 +101,16 @@ RUN.addEventListener("click", () => {
 
     var iFrame = document.querySelector(".output");
     iFrame.srcdoc = htmlCode;
+}
+
+// when run button is clicked the code runs
+RUN.addEventListener("click", runCode);
+
+document.addEventListener("keydown", (event) => {
+    if(event.ctrlKey && (event.key === "s" || event.key === 83)) {
+        event.preventDefault();
+        runCode();
+    }
 });
 
 let css_box = document.querySelector(".css_input");
