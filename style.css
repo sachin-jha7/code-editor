@@ -147,6 +147,14 @@ body {
     background-color: rgb(35, 160, 35);
 }
 
+.save {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    margin-left: 47.5%;
+}
+
 .output {
     height: 39vw;
     width: 665px;
@@ -194,6 +202,9 @@ body {
     .js-btn {
         height: 30px;
     }
+    .save {
+        margin-left: 170px;
+    }
 }
 
 @media (min-width: 430.5px) and (max-width: 965px) {
@@ -206,6 +217,9 @@ body {
     .output {
         height: 500px;
         width: 97vw;
+    }
+    .save {
+        margin-left: 90%;
     }
 }
 
