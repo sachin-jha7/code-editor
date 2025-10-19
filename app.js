@@ -23,7 +23,7 @@ var html_editor = ace.edit("html_input");
 html_editor.setTheme("ace/theme/chaos");
 
 html_editor.session.setMode("ace/mode/html");
-var htmlDefaultCode = `<!--Stylesheets and JavaScript files are already included-->
+var htmlDefaultCode = `<!--Stylesheets and JavaScript files are already linked-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,6 +103,35 @@ let runCode = () => {
     iFrame.srcdoc = htmlCode;
 }
 
+// Download Your Code
+
+let its_js = false; let its_css = false; let its_html = true;
+
+let downloadContent = (content, filename, mimeType) => {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+
+let saveBtn = document.querySelector(".save");
+saveBtn.addEventListener("click", () => {
+    const textToDownload = localStorage.getItem("myTextFile");
+    if (textToDownload && its_css) {
+        downloadContent(textToDownload, "style.css", "text/plain");
+    } else if(textToDownload && its_js) {
+        downloadContent(textToDownload, "app.js", "text/plain");
+    } else if(textToDownload && its_html) {
+        downloadContent(textToDownload, "index.html", "text/plain");
+    }
+});
+
 // when run button is clicked the code runs
 RUN.addEventListener("click", runCode);
 
@@ -128,8 +157,6 @@ let removeHtml_Js = () => {
 }
 
 var cssDefaultCode = `body {
-    margin: 0;
-    padding: 0;
     text-align: center;
 }
 button {
@@ -163,6 +190,12 @@ let addCssEditor = () => {
         init = true; isWrite = false;
         liveCode = css_editor.getValue();
         // console.log(cssLiveCode);
+        const textContent = liveCode;
+        // console.log(textContent);
+        localStorage.setItem("myTextFile", textContent);
+        its_css = true;
+        its_js = false;
+        its_html = false;
     });
     if (init) {
         css_editor.setValue(liveCode);
@@ -185,6 +218,12 @@ var htmlLiveCode;
 html_editor.getSession().on("change", () => {
     // init = true;
     htmlLiveCode = html_editor.getValue();
+    const textContent = htmlLiveCode;
+    // console.log(textContent);
+    localStorage.setItem("myTextFile", textContent);
+    its_html = true;
+    its_css = false;
+    its_js = false;
 });
 
 let addHtmlEditor = () => {
@@ -236,6 +275,12 @@ let addJsEditor = () => {
         init = true; isWriteJs = false;
         liveCode = js_editor.getValue();
         // console.log(cssLiveCode);
+        const textContent = liveCode;
+        // console.log(textContent);
+        localStorage.setItem("myTextFile", textContent);
+        its_css = false;
+        its_js = true;
+        its_html = false;
     });
     if (init) {
         js_editor.setValue(liveCode);
@@ -252,19 +297,27 @@ for (let btn of langBtn) {
             removeHtml_Js();
             addCssEditor();
             isCssClick = true;
+            its_css = true;
+            its_html = false;
+            its_js = false;
 
         }
         if (btn.innerText == "HTML") {
 
             removeCss_Js();
             addHtmlEditor();
-
+            its_css = false;
+            its_html = true;
+            its_js = false;
         }
         if (btn.innerText == "JavaScript") {
 
             removeHtml_Css();
             addJsEditor();
             isJsClick = true;
+            its_css = false;
+            its_html = false;
+            its_js = true;
 
         }
     }
