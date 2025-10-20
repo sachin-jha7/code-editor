@@ -122,12 +122,15 @@ let downloadContent = (content, filename, mimeType) => {
 
 let saveBtn = document.querySelector(".save");
 saveBtn.addEventListener("click", () => {
-    const textToDownload = localStorage.getItem("myTextFile");
-    if (textToDownload && its_css) {
+    
+    if (its_css) {
+        const textToDownload = localStorage.getItem("cssFile");
         downloadContent(textToDownload, "style.css", "text/plain");
-    } else if(textToDownload && its_js) {
+    } else if(its_js) {
+        const textToDownload = localStorage.getItem("jsFile");
         downloadContent(textToDownload, "app.js", "text/plain");
-    } else if(textToDownload && its_html) {
+    } else if(its_html) {
+        const textToDownload = localStorage.getItem("htmlFile");
         downloadContent(textToDownload, "index.html", "text/plain");
     }
 });
@@ -192,10 +195,7 @@ let addCssEditor = () => {
         // console.log(cssLiveCode);
         const textContent = liveCode;
         // console.log(textContent);
-        localStorage.setItem("myTextFile", textContent);
-        its_css = true;
-        its_js = false;
-        its_html = false;
+        localStorage.setItem("cssFile", textContent);
     });
     if (init) {
         css_editor.setValue(liveCode);
@@ -220,11 +220,13 @@ html_editor.getSession().on("change", () => {
     htmlLiveCode = html_editor.getValue();
     const textContent = htmlLiveCode;
     // console.log(textContent);
-    localStorage.setItem("myTextFile", textContent);
-    its_html = true;
-    its_css = false;
-    its_js = false;
+    localStorage.setItem("htmlFile", textContent);
 });
+
+const Content = htmlDefaultCode;
+// console.log(textContent);
+localStorage.setItem("htmlFile", Content);
+// localStorage.clear();
 
 let addHtmlEditor = () => {
     css_box.setAttribute("id", "remove");
@@ -277,10 +279,7 @@ let addJsEditor = () => {
         // console.log(cssLiveCode);
         const textContent = liveCode;
         // console.log(textContent);
-        localStorage.setItem("myTextFile", textContent);
-        its_css = false;
-        its_js = true;
-        its_html = false;
+        localStorage.setItem("jsFile", textContent);
     });
     if (init) {
         js_editor.setValue(liveCode);
